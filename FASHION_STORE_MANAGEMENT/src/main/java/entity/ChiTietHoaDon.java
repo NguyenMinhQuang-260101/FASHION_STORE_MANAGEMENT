@@ -47,6 +47,7 @@ public class ChiTietHoaDon {
 		this.soLuong = soLuong;
 	}
 
+	
 	public ChiTietHoaDon() {
 		super();
 	}
