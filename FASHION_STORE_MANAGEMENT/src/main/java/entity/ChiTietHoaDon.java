@@ -2,56 +2,78 @@ package entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
 @Table(name = "ChiTietHoaDon")
 public class ChiTietHoaDon {
-	@Column(name = "maHD")
-	private HoaDon maHD;
 	
-	@Column(name = "maSP")
-	private SanPham maSP;
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
+	
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "hoadon_id", nullable = false)
+    private HoaDon hoaDon;
+    
+	@ManyToOne
+	@JoinColumn(name = "sanpham_id", nullable = false)
+	private SanPham sanPham;
 	
 	@Column(name = "soLuong")
-	private HoaDon soLuong;
+	private int soLuong;
 
-	public HoaDon getMaHD() {
-		return maHD;
+	public int getId() {
+		return id;
 	}
 
-	public SanPham getMaSP() {
-		return maSP;
+	public HoaDon getHoaDon() {
+		return hoaDon;
 	}
 
-	public HoaDon getSoLuong() {
+	public SanPham getSanPham() {
+		return sanPham;
+	}
+
+	public int getSoLuong() {
 		return soLuong;
 	}
 
-	public void setMaHD(HoaDon maHD) {
-		this.maHD = maHD;
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public void setMaSP(SanPham maSP) {
-		this.maSP = maSP;
+	public void setHoaDon(HoaDon hoaDon) {
+		this.hoaDon = hoaDon;
 	}
 
-	public void setSoLuong(HoaDon soLuong) {
+	public void setSanPham(SanPham sanPham) {
+		this.sanPham = sanPham;
+	}
+
+	public void setSoLuong(int soLuong) {
 		this.soLuong = soLuong;
 	}
 
-	public ChiTietHoaDon(HoaDon maHD, SanPham maSP, HoaDon soLuong) {
+	public ChiTietHoaDon(int id, HoaDon hoaDon, SanPham sanPham, int soLuong) {
 		super();
-		this.maHD = maHD;
-		this.maSP = maSP;
+		this.id = id;
+		this.hoaDon = hoaDon;
+		this.sanPham = sanPham;
 		this.soLuong = soLuong;
 	}
 
-	
-	public ChiTietHoaDon() {
+	public ChiTietHoaDon(int id) {
 		super();
+		this.id = id;
 	}
-	
 	
 	
 	

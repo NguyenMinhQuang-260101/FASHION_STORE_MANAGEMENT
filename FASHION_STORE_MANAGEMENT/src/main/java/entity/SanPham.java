@@ -2,9 +2,12 @@ package entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -32,6 +35,10 @@ public class SanPham {
 
 	@Column(name = "anhSP")
 	private String anhSP;
+	
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "nhanvien_id", nullable = false)
+    private NhanVien nhanVien;
 
 	public int getMaSP() {
 		return maSP;
@@ -59,6 +66,10 @@ public class SanPham {
 
 	public String getAnhSP() {
 		return anhSP;
+	}
+
+	public NhanVien getNhanVien() {
+		return nhanVien;
 	}
 
 	public void setMaSP(int maSP) {
@@ -89,7 +100,12 @@ public class SanPham {
 		this.anhSP = anhSP;
 	}
 
-	public SanPham(int maSP, String tenSP, String kichCo, int soLuong, double giaNhap, double giaBan, String anhSP) {
+	public void setNhanVien(NhanVien nhanVien) {
+		this.nhanVien = nhanVien;
+	}
+
+	public SanPham(int maSP, String tenSP, String kichCo, int soLuong, double giaNhap, double giaBan, String anhSP,
+			NhanVien nhanVien) {
 		super();
 		this.maSP = maSP;
 		this.tenSP = tenSP;
@@ -98,15 +114,18 @@ public class SanPham {
 		this.giaNhap = giaNhap;
 		this.giaBan = giaBan;
 		this.anhSP = anhSP;
-	}
-
-	public SanPham() {
-		super();
+		this.nhanVien = nhanVien;
 	}
 
 	public SanPham(int maSP) {
 		super();
 		this.maSP = maSP;
 	}
+
+	public SanPham() {
+		super();
+	}
+    
+    
 
 }

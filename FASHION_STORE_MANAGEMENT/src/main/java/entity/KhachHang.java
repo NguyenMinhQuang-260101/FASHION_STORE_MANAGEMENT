@@ -2,9 +2,12 @@ package entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -24,6 +27,10 @@ public class KhachHang {
 	@Column(name = "diaChiKH")
 	private String diaChi;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "nhanvien_id", nullable = false)
+    private NhanVien nhanVien;
+
 	public int getMaKH() {
 		return maKH;
 	}
@@ -38,6 +45,10 @@ public class KhachHang {
 
 	public String getDiaChi() {
 		return diaChi;
+	}
+
+	public NhanVien getNhanVien() {
+		return nhanVien;
 	}
 
 	public void setMaKH(int maKH) {
@@ -56,12 +67,17 @@ public class KhachHang {
 		this.diaChi = diaChi;
 	}
 
-	public KhachHang(int maKH, String hoTenKH, String sdtKH, String diaChi) {
+	public void setNhanVien(NhanVien nhanVien) {
+		this.nhanVien = nhanVien;
+	}
+
+	public KhachHang(int maKH, String hoTenKH, String sdtKH, String diaChi, NhanVien nhanVien) {
 		super();
 		this.maKH = maKH;
 		this.hoTenKH = hoTenKH;
 		this.sdtKH = sdtKH;
 		this.diaChi = diaChi;
+		this.nhanVien = nhanVien;
 	}
 
 	public KhachHang() {
@@ -72,7 +88,6 @@ public class KhachHang {
 		super();
 		this.maKH = maKH;
 	}
-	
-	
-
+    
+    
 }
