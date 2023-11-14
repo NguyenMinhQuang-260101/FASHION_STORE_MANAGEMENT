@@ -37,7 +37,7 @@ public class SanPham {
 	private String anhSP;
 	
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "nhanvien_id", nullable = false)
+    @JoinColumn(name = "nhanvien_id", nullable = true)
     private NhanVien nhanVien;
 
 	public int getMaSP() {

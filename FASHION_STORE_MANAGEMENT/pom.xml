@@ -23,7 +23,6 @@
 			</plugin>
 		</plugins>
 	</build>
-
 	<dependencies>
 
 		<!-- https://mvnrepository.com/artifact/net.sourceforge.jtds/jtds -->

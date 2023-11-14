@@ -1,5 +1,12 @@
 package service;
 
-public interface SanPhamService {
+import java.util.List;
 
+import entity.SanPham;
+
+public interface SanPhamService {
+	public List<SanPham> getSanPhams();
+	public void saveSanPham(SanPham sanPham);
+	public SanPham getSanPham(int maSP);
+	public void deleteSanPham(int maSP);
 }
