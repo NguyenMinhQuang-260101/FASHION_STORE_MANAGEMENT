@@ -10,14 +10,19 @@
 table, th, td {
 	border: 1px solid black;
 }
+.test{
+	margin-left: 200px;
+}
+
 </style>
 </head>
 <body>
-	<div id="wrapper" align="center">
-		<div id="header">
-			<h2>CRM - Sản phẩm Relationship Manager</h2>
-		</div>
-	</div>
+<div>
+<%@include file="main-menu.jsp" %>
+</div>
+
+<div class="test">
+	
 	<div id="container">
 		<div id="content" align="center">
 			<input type="button" value="Add Sản phẩm"
@@ -63,5 +68,6 @@ table, th, td {
 			</table>
 		</div>
 	</div>
+</div>
 </body>
 </html>

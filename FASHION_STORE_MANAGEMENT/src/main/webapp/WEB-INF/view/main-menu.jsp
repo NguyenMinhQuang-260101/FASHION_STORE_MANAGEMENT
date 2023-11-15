@@ -20,7 +20,7 @@
 	}
 	nav{
 		position: fixed;
-		width: 250px;
+		width: 200px;
 		height: 100%;
 		background: #f1f1f1;
 		display: flex;
@@ -32,7 +32,7 @@
 	}
 	nav ul{
 		width: 100%;
-		list-style: none;
+		list-style: none;	
 		overflow: hidden;
 	}
 	nav ul li a{
@@ -81,13 +81,13 @@
 <body>
 <nav>
 	<ul>
-		<li><a href="/FASHION_STORE_MANAGEMENT/">
+		<li><a href="/Fashion_Store_Management/">
 		<ion-icon name="home-outline"></ion-icon>
 		Trang chủ</a></li>
-		<li><a href="/FASHION_STORE_MANAGEMENT/sanPham">
+		<li><a href="/Fashion_Store_Management/sanPham/list">
 		<ion-icon name="storefront-outline"></ion-icon>
 		Sản phẩm</a></li>
-		<li><a href="/FASHION_STORE_MANAGEMENT/nhanVien">
+		<li><a href="//Fashion_Store_Management/nhanVien">
 		<ion-icon name="person-outline"></ion-icon>
 		Nhân viên</a></li>
 		<li><a href="#home">
@@ -104,13 +104,7 @@
 		
 	</ul>
 </nav>
-<section class="content">
-<div>
 
-
-			<%@include file="list-nhanVien.jsp" %>
-</div>
-</section>
 <footer>
 
 </footer>
