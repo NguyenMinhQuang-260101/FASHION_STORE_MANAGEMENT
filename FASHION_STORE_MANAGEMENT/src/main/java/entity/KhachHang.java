@@ -25,10 +25,10 @@ public class KhachHang {
 	private String sdtKH;
 
 	@Column(name = "diaChiKH")
-	private String diaChi;
+	private String diaChiKH;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "nhanvien_id", nullable = false)
+    @JoinColumn(name = "nhanvien_id", nullable = true)
     private NhanVien nhanVien;
 
 	public int getMaKH() {
@@ -43,8 +43,8 @@ public class KhachHang {
 		return sdtKH;
 	}
 
-	public String getDiaChi() {
-		return diaChi;
+	public String getDiaChiKH() {
+		return diaChiKH;
 	}
 
 	public NhanVien getNhanVien() {
@@ -63,20 +63,20 @@ public class KhachHang {
 		this.sdtKH = sdtKH;
 	}
 
-	public void setDiaChi(String diaChi) {
-		this.diaChi = diaChi;
+	public void setDiaChiKH(String diaChiKH) {
+		this.diaChiKH = diaChiKH;
 	}
 
 	public void setNhanVien(NhanVien nhanVien) {
 		this.nhanVien = nhanVien;
 	}
 
-	public KhachHang(int maKH, String hoTenKH, String sdtKH, String diaChi, NhanVien nhanVien) {
+	public KhachHang(int maKH, String hoTenKH, String sdtKH, String diaChiKH, NhanVien nhanVien) {
 		super();
 		this.maKH = maKH;
 		this.hoTenKH = hoTenKH;
 		this.sdtKH = sdtKH;
-		this.diaChi = diaChi;
+		this.diaChiKH = diaChiKH;
 		this.nhanVien = nhanVien;
 	}
 
@@ -88,5 +88,6 @@ public class KhachHang {
 		super();
 		this.maKH = maKH;
 	}
+
     
 }
