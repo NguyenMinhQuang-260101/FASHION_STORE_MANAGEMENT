@@ -1,5 +1,7 @@
 package service;
 
-public interface ChiTietHoaDonService {
+import entity.ChiTietHoaDon;
 
+public interface ChiTietHoaDonService {
+	public void saveChiTietHoaDon(ChiTietHoaDon chiTietHoaDon);
 }

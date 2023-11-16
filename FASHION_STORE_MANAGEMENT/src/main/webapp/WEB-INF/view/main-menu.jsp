@@ -90,7 +90,7 @@
 		<li><a href="/Fashion_Store_Management/nhanVien/list">
 		<ion-icon name="person-outline"></ion-icon>
 		Nhân viên</a></li>
-		<li><a href="#home">
+		<li><a href="/Fashion_Store_Management/khachHang/list">
 		<ion-icon name="person-outline"></ion-icon>
 		Khách hàng</a>
 		</li>

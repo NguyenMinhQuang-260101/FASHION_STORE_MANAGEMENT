@@ -29,6 +29,11 @@ table, th, td {
 				<input type="button" value="Thêm khách hàng"
 					onclick="window.location.href='showFormForAdd'; return false;"
 					class="add-button"> <br> <br>
+					
+				<input type="button" value="GIỎ HÀNG"
+					onclick="window.location.href='cart'; return false;"
+					class="cart-button"><br> <br>
+					
 				<table style="width: 100%">
 					<tr>
 						<th>Họ tên khách hàng</th>

@@ -13,20 +13,20 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "ChiTietHoaDon")
 public class ChiTietHoaDon {
-	
-    @Id
-    @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-	
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "hoadon_id", nullable = false)
-    private HoaDon hoaDon;
-    
+
+	@Id
+	@Column(name = "id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
+
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "hoadon_id", nullable = false)
+	private HoaDon hoaDon;
+
 	@ManyToOne
 	@JoinColumn(name = "sanpham_id", nullable = false)
 	private SanPham sanPham;
-	
+
 	@Column(name = "soLuong")
 	private int soLuong;
 
@@ -74,7 +74,12 @@ public class ChiTietHoaDon {
 		super();
 		this.id = id;
 	}
-	
-	
-	
+
+	public ChiTietHoaDon(HoaDon hoaDon, SanPham sanPham, int soLuong) {
+		super();
+		this.hoaDon = hoaDon;
+		this.sanPham = sanPham;
+		this.soLuong = soLuong;
+	}
+
 }

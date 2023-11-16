@@ -1,5 +1,14 @@
 package controller;
 
-public class ChiTietHoaDonController {
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
 
+import service.ChiTietHoaDonService;
+
+@Controller
+@RequestMapping("/chiTietHoaDon")
+public class ChiTietHoaDonController {
+	@Autowired
+	private ChiTietHoaDonService chiTietHoaDonService;
 }

@@ -91,4 +91,13 @@ public class HoaDon {
 		this.maHD = maHD;
 	}
 
+	public HoaDon(String ngayLapHD, NhanVien nhanVien, Double triGiaHD) {
+		super();
+		this.ngayLapHD = ngayLapHD;
+		this.nhanVien = nhanVien;
+		this.triGiaHD = triGiaHD;
+	}
+	
+	
+
 }
