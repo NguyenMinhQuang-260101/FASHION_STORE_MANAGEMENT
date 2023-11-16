@@ -22,5 +22,10 @@ public class MainMenu {
 		
 		return "main-menu";
 	}
+	@GetMapping("/jsp")
+	public String DangNhap ( ) {
+		
+		return "dangNhap";
+	}
 
 }

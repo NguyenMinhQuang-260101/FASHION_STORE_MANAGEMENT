@@ -24,11 +24,6 @@ table, th, td {
 <div class="test">
 	
 	<div id="container">
-		<div id="content" align="center">
-			<input type="button" value="Add Sản phẩm"
-				onclick="window.location.href='showFormForAdd'; return false;"
-				class="add-button"> <br>
-			<br>
 			<table style="width: 100%">
 				<tr>
 					<th>Tên sản phẩm</th>
@@ -67,6 +62,10 @@ table, th, td {
 					</tr>
 				</c:forEach>
 			</table>
+			<div id="content" align="center" style="margin-top: 20px">
+			<input type="button" value="Add Sản phẩm"
+				onclick="window.location.href='showFormForAdd'; return false;"
+				class="add-button">
 		</div>
 	</div>
 </div>

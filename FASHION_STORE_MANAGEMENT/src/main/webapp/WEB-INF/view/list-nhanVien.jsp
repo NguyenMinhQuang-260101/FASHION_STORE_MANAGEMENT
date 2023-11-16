@@ -13,6 +13,7 @@ table, th, td {
 .test{
 	margin-left: 200px;
 }
+
 </style>
 </head>
 <body>
@@ -21,17 +22,12 @@ table, th, td {
 </div>
 	<div class="test">
 	<div id="container">
-		<div id="content" align="center">
-			<input type="button" value="Add Nhân viên"
-				onclick="window.location.href='showFormForAdd'; return false;"
-				class="add-button"> <br>
-			<br>
 			<table style="width: 100%">
 				<tr>
 					<th>Họ tên nhân viên</th>
 					<th>Giới tính</th>
 					<th>Địa chỉ</th>
-					<th>Số điện thoạip</th>
+					<th>Số điện thoại</th>
 					<th>Ngày vào làm</th>
 					<th colspan="2">Action</th>
 				</tr>
@@ -61,6 +57,10 @@ table, th, td {
 					</tr>
 				</c:forEach>
 			</table>
+			<div id="content" align="center" style="margin-top: 20px">
+			<input type="button" value="Thêm nhân viên"
+				onclick="window.location.href='showFormForAdd'; return false;"
+				class="add-button">
 		</div>
 	</div>
 	</div>
