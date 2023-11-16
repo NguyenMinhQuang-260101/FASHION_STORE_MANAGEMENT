@@ -21,6 +21,7 @@ public class KhachHangServiceImpl implements KhachHangService{
 		// TODO Auto-generated method stub
 		return khachHangDAO.getKhachHangs();
 	}
+	
 
 	@Override
 	@Transactional

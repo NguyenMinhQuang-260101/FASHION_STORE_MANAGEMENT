@@ -24,6 +24,7 @@ public class KhachHangDAOImpl implements KhachHangDAO {
 		Query<KhachHang> theQuery = currentSession.createQuery("from KhachHang order by hoTenKH", KhachHang.class);
 		List<KhachHang> khachHangs = theQuery.getResultList();
 		return khachHangs;
+		
 	}
 
 	@Override

@@ -9,6 +9,7 @@ public interface KhachHangService {
 
 	public void saveKhachHang(KhachHang khachHang);
 
+	
 	public KhachHang getKhachHang(int maKH);
 
 	public void deleteKhachHang(int maKH);

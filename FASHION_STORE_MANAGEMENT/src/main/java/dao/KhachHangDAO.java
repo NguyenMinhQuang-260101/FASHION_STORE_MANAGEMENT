@@ -12,5 +12,6 @@ public interface KhachHangDAO {
 	public KhachHang getKhachHangById(int  maKH);
 
 	public void deleteKhachHang(int maKH);
+	
 
 }

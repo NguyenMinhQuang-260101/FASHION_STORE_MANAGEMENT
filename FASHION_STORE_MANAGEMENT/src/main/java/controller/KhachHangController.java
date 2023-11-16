@@ -20,6 +20,7 @@ public class KhachHangController {
 	@Autowired
 	private KhachHangService khachHangService;
 	
+	
 	@PostMapping("/saveKhachHang")
 	public String saveKhachHang(@ModelAttribute("khachHang") KhachHang khachHang) {
 		khachHangService.saveKhachHang(khachHang);

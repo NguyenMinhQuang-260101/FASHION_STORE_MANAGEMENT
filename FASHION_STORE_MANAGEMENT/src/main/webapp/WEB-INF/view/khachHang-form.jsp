@@ -13,6 +13,7 @@
 		<div id="header"></div>
 	</div>
 	<div id="container">
+	
 		<h3>Save Customer</h3>
 		<form:form action="saveKhachHang" modelAttribute="khachHang" method="POST">
 			<form:hidden path="maKH" />
