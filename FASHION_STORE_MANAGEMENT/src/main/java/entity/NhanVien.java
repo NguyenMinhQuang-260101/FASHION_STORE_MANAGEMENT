@@ -13,7 +13,7 @@ public class NhanVien {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "maNV")
-	private int maNhanVien;
+	private int maNV;
 
 	@Column(name = "hoTenNV")
 	private String hoTenNV;
@@ -22,7 +22,7 @@ public class NhanVien {
 	private String gioiTinh;
 
 	@Column(name = "diaChiNV")
-	private String diaChi;
+	private String diaChiNV;
 
 	@Column(name = "sdtNV")
 	private String sdtNV;
@@ -30,8 +30,8 @@ public class NhanVien {
 	@Column(name = "ngayLV")
 	private String ngayLV;
 
-	public int getMaNhanVien() {
-		return maNhanVien;
+	public int getMaNV() {
+		return maNV;
 	}
 
 	public String getHoTenNV() {
@@ -42,9 +42,7 @@ public class NhanVien {
 		return gioiTinh;
 	}
 
-	public String getDiaChi() {
-		return diaChi;
-	}
+	
 
 	public String getSdtNV() {
 		return sdtNV;
@@ -54,8 +52,8 @@ public class NhanVien {
 		return ngayLV;
 	}
 
-	public void setMaNhanVien(int maNhanVien) {
-		this.maNhanVien = maNhanVien;
+	public void setMaNV(int maNV) {
+		this.maNV = maNV;
 	}
 
 	public void setHoTenNV(String hoTenNV) {
@@ -66,9 +64,7 @@ public class NhanVien {
 		this.gioiTinh = gioiTinh;
 	}
 
-	public void setDiaChi(String diaChi) {
-		this.diaChi = diaChi;
-	}
+	
 
 	public void setSdtNV(String sdtNV) {
 		this.sdtNV = sdtNV;
@@ -78,23 +74,42 @@ public class NhanVien {
 		this.ngayLV = ngayLV;
 	}
 
-	public NhanVien(int maNhanVien, String hoTenNV, String gioiTinh, String diaChi, String sdtNV, String ngayLV) {
+	
+
+	public NhanVien(String hoTenNV, String gioiTinh, String diaChiNV, String sdtNV, String ngayLV) {
 		super();
-		this.maNhanVien = maNhanVien;
 		this.hoTenNV = hoTenNV;
 		this.gioiTinh = gioiTinh;
-		this.diaChi = diaChi;
+		this.diaChiNV = diaChiNV;
 		this.sdtNV = sdtNV;
 		this.ngayLV = ngayLV;
+	}
+
+	public NhanVien(int maNV, String hoTenNV, String gioiTinh, String diaChiNV, String sdtNV, String ngayLV) {
+		super();
+		this.maNV = maNV;
+		this.hoTenNV = hoTenNV;
+		this.gioiTinh = gioiTinh;
+		this.diaChiNV = diaChiNV;
+		this.sdtNV = sdtNV;
+		this.ngayLV = ngayLV;
+	}
+
+	public String getDiaChiNV() {
+		return diaChiNV;
+	}
+
+	public void setDiaChiNV(String diaChiNV) {
+		this.diaChiNV = diaChiNV;
 	}
 
 	public NhanVien() {
 		super();
 	}
 
-	public NhanVien(int maNhanVien) {
+	public NhanVien(int maNV) {
 		super();
-		this.maNhanVien = maNhanVien;
+		this.maNV = maNV;
 	}
 	
 	

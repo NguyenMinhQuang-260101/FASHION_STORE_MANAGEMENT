@@ -9,4 +9,6 @@ public interface SanPhamService {
 	public void saveSanPham(SanPham sanPham);
 	public SanPham getSanPham(int maSP);
 	public void deleteSanPham(int maSP);
+	public void updateSanPham(SanPham sanPham);
+
 }

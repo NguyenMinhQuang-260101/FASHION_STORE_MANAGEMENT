@@ -12,4 +12,5 @@ public interface SanPhamDAO {
 	public SanPham getSanPham(int maSP);
 
 	public void deleteSanPham(int maSP);
+	public void updateSanPham(SanPham sanPham);
 }

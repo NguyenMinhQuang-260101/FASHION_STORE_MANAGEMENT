@@ -5,19 +5,21 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>List Sản phẩm</title>
+<title>List nhân viên</title>
 <style>
 table, th, td {
 	border: 1px solid black;
 }
+.test{
+	margin-left: 200px;
+}
 </style>
 </head>
 <body>
-	<div id="wrapper" align="center">
-		<div id="header">
-			<h2>CRM - Nhân viên Relationship Manager</h2>
-		</div>
-	</div>
+<div>
+<%@include file="main-menu.jsp" %>
+</div>
+	<div class="test">
 	<div id="container">
 		<div id="content" align="center">
 			<input type="button" value="Add Nhân viên"
@@ -52,7 +54,7 @@ table, th, td {
 						<td>
 							<div align="center">
 								<a href="${updateLink}">Update</a>&emsp; <a href="${deleteLink}"
-									onclick="if(!(confirm('Are you sure to delete this san pham?'))) return false">Delete</a>
+									onclick="if(!(confirm('Are you sure to delete this nhan vien?'))) return false">Delete</a>
 							</div>
 
 						</td>
@@ -60,6 +62,7 @@ table, th, td {
 				</c:forEach>
 			</table>
 		</div>
+	</div>
 	</div>
 </body>
 </html>

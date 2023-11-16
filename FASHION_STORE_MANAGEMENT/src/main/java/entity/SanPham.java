@@ -125,6 +125,18 @@ public class SanPham {
 	public SanPham() {
 		super();
 	}
+
+	public SanPham(String tenSP, String kichCo, int soLuong, double giaNhap, double giaBan, String anhSP,
+			NhanVien nhanVien) {
+		super();
+		this.tenSP = tenSP;
+		this.kichCo = kichCo;
+		this.soLuong = soLuong;
+		this.giaNhap = giaNhap;
+		this.giaBan = giaBan;
+		this.anhSP = anhSP;
+		this.nhanVien = nhanVien;
+	}
     
     
 

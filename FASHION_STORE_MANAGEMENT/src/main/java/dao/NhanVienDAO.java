@@ -9,4 +9,6 @@ public interface NhanVienDAO {
 	public void saveNhanVien(NhanVien nhanvien);
 	public NhanVien getNhanVien(int maNV);
 	public void deleteNhanVien(int maNV);
+	public void updateNhanVien(NhanVien nhanvien);
+
 }
