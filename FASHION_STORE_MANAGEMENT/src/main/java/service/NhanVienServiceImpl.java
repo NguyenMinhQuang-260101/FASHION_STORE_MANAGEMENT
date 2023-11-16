@@ -23,21 +23,31 @@ public class NhanVienServiceImpl implements NhanVienService {
 	}
 
 	@Override
+	@Transactional
 	public void saveNhanVien(NhanVien nhanvien) {
 		// TODO Auto-generated method stub
 		nhanVienDAO.saveNhanVien(nhanvien);
 	}
 
 	@Override
+	@Transactional
 	public NhanVien getNhanVien(int maNV) {
 		// TODO Auto-generated method stub
 		return nhanVienDAO.getNhanVien(maNV);
 	}
 
 	@Override
+	@Transactional
 	public void deleteNhanVien(int maNV) {
 		// TODO Auto-generated method stub
 		nhanVienDAO.deleteNhanVien(maNV);
+	}
+
+	@Override
+	@Transactional
+	public void updateNhanVien(NhanVien nhanvien) {
+		// TODO Auto-generated method stub
+		nhanVienDAO.updateNhanVien(nhanvien);
 	}
 	
 }

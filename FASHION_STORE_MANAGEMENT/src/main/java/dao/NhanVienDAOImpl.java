@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import entity.NhanVien;
+import entity.SanPham;
 
 @Repository
 public class NhanVienDAOImpl implements NhanVienDAO {
@@ -47,6 +48,25 @@ public class NhanVienDAOImpl implements NhanVienDAO {
 		Query<NhanVien> theQuery = currentSession.createQuery("delete from NhanVien where maNV=:maNV");
 		theQuery.setParameter("maNV", maNV);
 		theQuery.executeUpdate();
+	}
+
+	@Override
+	@Transactional
+	public void updateNhanVien(NhanVien nhanVien) {
+		// TODO Auto-generated method stub
+		try {
+			Session currentSession = sessionFactory.getCurrentSession();
+			NhanVien nhanVien1 = currentSession.get(NhanVien.class, nhanVien.getMaNV());
+			nhanVien1.setHoTenNV(nhanVien.getHoTenNV());
+			nhanVien1.setGioiTinh(nhanVien.getGioiTinh());
+			nhanVien1.setDiaChiNV(nhanVien.getDiaChiNV());
+			nhanVien1.setSdtNV(nhanVien.getSdtNV());
+			nhanVien1.setNgayLV(nhanVien.getNgayLV());
+			currentSession.saveOrUpdate(nhanVien1);
+		} catch (Exception e) {
+			// TODO: handle exception+
+			
+		}
 	}
 	
 }

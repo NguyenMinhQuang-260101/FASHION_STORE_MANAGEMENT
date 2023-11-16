@@ -42,4 +42,17 @@ public class SanPhamServiceImpl implements SanPhamService {
 		sanPhamDAO.deleteSanPham(maSP);
 	}
 
+	@Override
+	@Transactional
+	public void updateSanPham(SanPham sanPham) {
+		// TODO Auto-generated method stub
+		 sanPhamDAO.updateSanPham(sanPham);
+	}
+
+	
+
+	
+
+	
+
 }

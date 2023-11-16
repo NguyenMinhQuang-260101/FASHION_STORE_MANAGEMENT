@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import entity.NhanVien;
+import entity.SanPham;
 import service.NhanVienService;
 
 @Controller
@@ -26,10 +27,10 @@ public class NhanVienController {
 		return "redirect:/nhanVien/list";
 	}
 	@GetMapping("/showFormForUpdate")
-	public String showFormForUpdate(@RequestParam("maSP") int maSP,Model theModel) {
-		NhanVien nhanVien = nhanVienService.getNhanVien(maSP);
+	public String showFormForUpdate(@RequestParam("maNV") int maNV,Model theModel) {
+		NhanVien nhanVien = nhanVienService.getNhanVien(maNV);
 		theModel.addAttribute("nhanVien",nhanVien);
-		return "nhanVien-form";
+		return "nhanVien-form2";
 	}
 	@GetMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel) {
@@ -49,5 +50,9 @@ public class NhanVienController {
 		theModel.addAttribute("nhanViens",nhanViens);
 		return "list-nhanVien";
 	}
-
+	@PostMapping("/updateNhanVien")
+	public String updateSanPham(@ModelAttribute("nhanVien") NhanVien nhanVien) {
+		nhanVienService.updateNhanVien(nhanVien);
+		return "redirect:/nhanVien/list";
+	}
 }

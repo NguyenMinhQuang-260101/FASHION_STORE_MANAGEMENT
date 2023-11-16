@@ -13,8 +13,8 @@
 		<div id="header"></div>
 	</div>
 	<div id="container">
-		<h3>Save nhân viên</h3>
-		<form:form action="saveNhanVien" modelAttribute="nhanVien" method="POST">
+		<h3>Update nhân viên</h3>
+		<form:form action="updateNhanVien" modelAttribute="nhanVien" method="POST">
 			<form:hidden path="maNV" />
 			<table>
 				<tbody>

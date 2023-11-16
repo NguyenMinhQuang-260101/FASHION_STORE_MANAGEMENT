@@ -87,7 +87,7 @@
 		<li><a href="/Fashion_Store_Management/sanPham/list">
 		<ion-icon name="storefront-outline"></ion-icon>
 		Sản phẩm</a></li>
-		<li><a href="//Fashion_Store_Management/nhanVien">
+		<li><a href="/Fashion_Store_Management/nhanVien/list">
 		<ion-icon name="person-outline"></ion-icon>
 		Nhân viên</a></li>
 		<li><a href="#home">

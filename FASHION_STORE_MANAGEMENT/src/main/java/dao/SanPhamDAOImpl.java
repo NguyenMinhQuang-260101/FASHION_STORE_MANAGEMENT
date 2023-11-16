@@ -48,4 +48,44 @@ public class SanPhamDAOImpl implements SanPhamDAO {
 		theQuery.executeUpdate();
 	}
 
+	@Override
+	@Transactional
+	public void updateSanPham(SanPham sanPham) {
+		// TODO Auto-generated method stub
+		try {
+			Session currentSession = sessionFactory.getCurrentSession();
+			SanPham sanPham1 = currentSession.get(SanPham.class, sanPham.getMaSP());
+			sanPham1.setTenSP(sanPham.getTenSP());
+			sanPham1.setKichCo(sanPham.getKichCo());
+			sanPham1.setSoLuong(sanPham.getSoLuong());
+			sanPham1.setGiaNhap(sanPham.getGiaNhap());
+			sanPham1.setGiaBan(sanPham.getGiaBan());
+			sanPham1.setAnhSP(sanPham.getAnhSP());
+			currentSession.saveOrUpdate(sanPham1);
+		} catch (Exception e) {
+			// TODO: handle exception+
+			
+		}
+	
+
+	}
+
+//	@Override
+//	public SanPham updateSanPham(int maSP,SanPham sanPham) {
+//		// TODO Auto-gen	erated method stub
+//		Session currentSession = sessionFactory.getCurrentSession();
+//		SanPham sanPham1 = currentSession.get(SanPham.class, maSP);
+//		if(sanPham1 == null) {
+//			return null;
+//		}
+//		sanPham1.setTenSP(sanPham.getTenSP());
+//		sanPham1.setKichCo(sanPham.getKichCo());
+//		sanPham1.setSoLuong(sanPham.getSoLuong());
+//		sanPham1.setGiaNhap(sanPham.getGiaNhap());
+//		sanPham1.setGiaBan(sanPham.getGiaBan());
+//		sanPham1.setAnhSP(sanPham.getAnhSP());
+//		currentSession.update(sanPham1);
+//		return sanPham1;
+//	}
+
 }

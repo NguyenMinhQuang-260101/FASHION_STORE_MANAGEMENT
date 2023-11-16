@@ -58,7 +58,8 @@ table, th, td {
 
 						<td>
 							<div align="center">
-								<a href="${updateLink}">Update</a>&emsp; <a href="${deleteLink}"
+								<a href="${updateLink}">Update</a>&emsp;
+								 <a href="${deleteLink}"
 									onclick="if(!(confirm('Are you sure to delete this san pham?'))) return false">Delete</a>
 							</div>
 

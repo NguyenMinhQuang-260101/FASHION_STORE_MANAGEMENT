@@ -29,7 +29,7 @@ public class SanPhamController {
 	public String showFormForUpdate(@RequestParam("maSP") int maSP,Model theModel) {
 		SanPham sanPham = sanPhamService.getSanPham(maSP);
 		theModel.addAttribute("sanPham",sanPham);
-		return "sanPham-form";
+		return "sanPham-form2";
 	}
 	@GetMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel) {
@@ -49,5 +49,9 @@ public class SanPhamController {
 		theModel.addAttribute("sanPhams",sanPhams);
 		return "list-sanPham";
 	}
-
+	@PostMapping("/updateSanPham")
+	public String updateSanPham(@ModelAttribute("sanPham") SanPham sanPham) {
+		sanPhamService.updateSanPham(sanPham);
+		return "redirect:/sanPham/list";
+	}
 }
