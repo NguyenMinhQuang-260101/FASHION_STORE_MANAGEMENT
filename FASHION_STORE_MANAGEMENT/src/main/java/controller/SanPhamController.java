@@ -25,17 +25,27 @@ public class SanPhamController {
 		sanPhamService.saveSanPham(sanPham);
 		return "redirect:/sanPham/list";
 	}
+	
 	@GetMapping("/showFormForUpdate")
 	public String showFormForUpdate(@RequestParam("maSP") int maSP,Model theModel) {
 		SanPham sanPham = sanPhamService.getSanPham(maSP);
 		theModel.addAttribute("sanPham",sanPham);
 		return "sanPham-form";
 	}
+	
 	@GetMapping("/showFormForAdd")
 	public String showFormForAdd(Model theModel) {
 		SanPham sanPham = new SanPham(); 
 		theModel.addAttribute("sanPham",sanPham);
 		return "sanPham-form";
+	}
+	
+//	Show View Detail Product
+	@GetMapping("/showFormForView")
+	public String showFormForView(@RequestParam("maSP") int maSP,Model theModel) {
+		SanPham sanPham = sanPhamService.getSanPham(maSP);
+		theModel.addAttribute("sanPham",sanPham);
+		return "info-sanpham";
 	}
 	
 	@GetMapping("/delete")
@@ -48,6 +58,12 @@ public class SanPhamController {
 		List<SanPham> sanPhams = sanPhamService.getSanPhams();
 		theModel.addAttribute("sanPhams",sanPhams);
 		return "list-sanPham";
+	}
+	
+	@PostMapping("/addProductToCart")
+	public String addSanPhamToCart(@ModelAttribute("sanPham") SanPham sanPham) {
+		sanPhamService.saveSanPham(sanPham);
+		return "redirect:/sanPham/list";
 	}
 
 }
