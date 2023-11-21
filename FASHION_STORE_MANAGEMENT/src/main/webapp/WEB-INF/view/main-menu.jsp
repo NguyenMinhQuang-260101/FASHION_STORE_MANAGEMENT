@@ -26,7 +26,6 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		border-right: 1px solid black;
 		z-index: 1000;
 		
 	}
@@ -84,6 +83,8 @@
 		<li><a href="/Fashion_Store_Management/">
 		<ion-icon name="home-outline"></ion-icon>
 		Trang chủ</a></li>
+		<li><a href="/Fashion_Store_Management/khachHang/cart">
+<ion-icon name="cart-outline"></ion-icon>Giỏ hàng</a></li>
 		<li><a href="/Fashion_Store_Management/sanPham/list">
 		<ion-icon name="storefront-outline"></ion-icon>
 		Sản phẩm</a></li>
@@ -94,7 +95,7 @@
 		<ion-icon name="person-outline"></ion-icon>
 		Khách hàng</a>
 		</li>
-		<li><a href="#home">
+		<li><a href="/Fashion_Store_Management/chiTietHoaDon/list">
 		<ion-icon name="receipt-outline"></ion-icon>
 		Hoá đơn</a>
 		<li><a href="#home">

@@ -1,7 +1,9 @@
 package controller;
 
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -103,8 +105,10 @@ public class KhachHangController {
 	@GetMapping("/showDonePay")
 	public String showPayDone(Model theModel) {
 		List<Cart> listItemCart = SanPhamController.listCarts;
-
-		String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(Calendar.getInstance().getTime());
+        Date date = new Date();
+        DateFormat dateFormat = null;
+        dateFormat = new SimpleDateFormat("HH:mm:ss MM/dd/yyyy");
+		String timeStamp = dateFormat.format(date);
 		NhanVien b = nhanVienService.getNhanVien(1);
 
 		HoaDon hoaDon = new HoaDon(timeStamp, b, sumTotal(listItemCart));
@@ -115,6 +119,8 @@ public class KhachHangController {
 					.saveChiTietHoaDon(new ChiTietHoaDon(hoaDonService.getHoaDonById(hoaDonService.getIdHoaDonNew()),
 							listItemCart.get(i).getSanPham(), listItemCart.get(i).getSoLuongMua()));
 		}
+		
+		SanPhamController.listCarts.removeAll(SanPhamController.listCarts);
 		return "redirect:/sanPham/list";
 	}
 

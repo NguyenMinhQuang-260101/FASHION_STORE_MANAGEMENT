@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>List Sản phẩm</title>
+<title>Giỏ hàng</title>
 <style>
 body{
 	background-color: #85929E;
@@ -70,7 +70,7 @@ img{
 					<th colspan="2">Action</th>
 				</tr>
 				<c:forEach var="tempSanPham" items="${sanPhams}">
-					<c:url var="updateLink" value="/sanPham/showFormForUpdate">
+					<c:url var="addLink" value="/sanPham/showFormForView">
 						<c:param name="maSP" value="${tempSanPham.maSP}"></c:param>
 					</c:url>
 					<c:url var="deleteLink" value="/sanPham/delete">

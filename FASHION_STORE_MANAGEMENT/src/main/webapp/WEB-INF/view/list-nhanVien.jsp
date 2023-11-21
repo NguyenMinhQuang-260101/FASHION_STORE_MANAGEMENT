@@ -7,31 +7,58 @@
 <meta charset="UTF-8">
 <title>List nhân viên</title>
 <style>
+body{
+	background-color: #85929E;
+}
 table, th, td {
-	border: 1px solid black;
+	border: 1.5px solid black;
+	margin-left: 30px;
+	margin-top:20px;
 }
-.test{
+
+.noidung{
 	margin-left: 200px;
+
 }
+.text{
+	background: #f1f1f1;
+	justify-content: center;
+	text-align: center;
+}
+.list-nhanvien-table{
+	border: 1px solid black;
+	background-color:  white;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+.text h1{
+	padding: 5px;
+}
+
 </style>
 </head>
 <body>
-<div>
-<%@include file="main-menu.jsp" %>
-</div>
-	<div class="test">
-	<div id="container">
-		<div id="content" align="center">
-			<input type="button" value="Add Nhân viên"
+	<div>
+		<%@include file="main-menu.jsp" %>
+	</div>
+	<div class="noidung">
+	
+		<div class="text">
+			<h1>QUẢN LÝ NHÂN VIÊN</h1>
+		</div>
+	
+	<div id="container" class="list-nhanvien-table">
+	<div id="content" align="right" style="margin: 5px 50px 5px 5px">
+			<input type="button" value="Thêm nhân viên"
 				onclick="window.location.href='showFormForAdd'; return false;"
-				class="add-button"> <br>
-			<br>
-			<table style="width: 100%">
-				<tr>
+				class="add-button">
+		</div>
+			<table style="height:auto;width: 95%">
+				<tr style="color: white; background-color: #566573" >
 					<th>Họ tên nhân viên</th>
 					<th>Giới tính</th>
 					<th>Địa chỉ</th>
-					<th>Số điện thoạip</th>
+					<th>Số điện thoại</th>
 					<th>Ngày vào làm</th>
 					<th colspan="2">Action</th>
 				</tr>
@@ -48,8 +75,6 @@ table, th, td {
 						<td>${tempNhanVien.diaChiNV}</td>
 						<td>${tempNhanVien.sdtNV}</td>
 						<td>${tempNhanVien.ngayLV}</td>
-						
-						
 
 						<td>
 							<div align="center">
@@ -61,8 +86,9 @@ table, th, td {
 					</tr>
 				</c:forEach>
 			</table>
-		</div>
+			
 	</div>
+	
 	</div>
 </body>
 </html>

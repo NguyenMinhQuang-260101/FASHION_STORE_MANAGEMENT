@@ -7,37 +7,60 @@
 <meta charset="UTF-8">
 <title>List khách hàng</title>
 <style>
+body{
+	background-color: #85929E;
+}
 table, th, td {
+	border: 1.5px solid black;
+	margin-left: 30px;
+	margin-top:20px;
+}
+.noidung{
+	margin-left: 200px;
+
+}
+.text{
+	background: #f1f1f1;
+	justify-content: center;
+	text-align: center;
+}
+.list-khachhang-table{
 	border: 1px solid black;
+	background-color:  white;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+.text h1{
+	padding: 5px;
 }
 
-.test {
-	margin-left: 200px;
-}
 </style>
 </head>
 <body>
 	<div>
-	
-		<%@include file="main-menu.jsp"%>
+		<%@include file="main-menu.jsp" %>
 	</div>
-
-	<div class="test">
-
-		<div id="container">
-			<div id="content" align="center">
-				<input type="button" value="Thêm khách hàng"
+	<div class="noidung">
+	
+		<div class="text">
+			<h1>QUẢN LÝ KHÁCH HÀNG</h1>
+		</div>
+	
+	<div id="container" class="list-khachhang-table">
+			<div id="content" align="center" style="float:right;display:flex;margin: 5px 50px 5px 5px">
+				<input style="margin-right: 20px" type="button" value="Thêm khách hàng"
 					onclick="window.location.href='showFormForAdd'; return false;"
 					class="add-button"> <br> <br>
 					
 				<input type="button" value="GIỎ HÀNG"
 					onclick="window.location.href='cart'; return false;"
 					class="cart-button"><br> <br>
+					</div>
 					
-				<table style="width: 100%">
-					<tr>
+			<table style="height:auto;width: 95%">
+				<tr style="color: white; background-color: #566573" >
 						<th>Họ tên khách hàng</th>
-						<th>Số diện thoại</th>
+						<th>Số điện thoại</th>
 						<th>Địa chỉ</th>
 						<th colspan="2">Action</th>
 					</tr>
@@ -68,8 +91,8 @@ table, th, td {
 						</tr>
 					</c:forEach>
 				</table>
+				
 			</div>
 		</div>
-	</div>
 </body>
 </html>

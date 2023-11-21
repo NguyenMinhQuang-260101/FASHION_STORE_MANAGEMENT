@@ -36,4 +36,9 @@ public class Cart {
 		this.tongGiaSP = tongGiaSP;
 	}
 
+	public Cart() {
+		super();
+	}
+	
+
 }

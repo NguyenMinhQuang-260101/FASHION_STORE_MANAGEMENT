@@ -7,12 +7,35 @@
 <meta charset="UTF-8">
 <title>List Sản phẩm</title>
 <style>
-table, th, td {
-	border: 1px solid black;
+body{
+	background-color: #85929E;
 }
-
-.test {
+table, th, td {
+	border: 1.5px solid black;
+	margin-left: 30px;
+	margin-top:20px;
+}
+.noidung{
 	margin-left: 200px;
+
+}
+.text{
+	background: #f1f1f1;
+	justify-content: center;
+	text-align: center;
+}
+.text h1{
+	padding: 5px;
+}
+.list-sanpham-table{
+	border: 1px solid black;
+	background-color:  white;
+	margin-top: 10px;
+	border-radius: 5px;
+}
+.image img{
+	width: 100px;
+	height: 100px;x		
 }
 </style>
 </head>
@@ -21,13 +44,17 @@ table, th, td {
 		<%@include file="main-menu.jsp"%>
 	</div>
 
-	<div class="test">
+	<div class="noidung">
+	
+		<div class="text">
+			<h1>GIỎ HÀNG</h1>
+		</div>
 
-		<div id="container">
+	<div id="container" class="list-sanpham-table">
 			<div id="content" align="center">
 
-				<table style="width: 100%">
-					<tr>
+			<table style="height:auto;width: 95%">
+				<tr style="color: white; background-color: #566573" >
 						<th>Ảnh sản phẩm</th>
 						<th>Tên sản phẩm</th>
 						<th>Kích cỡ</th>
@@ -37,8 +64,8 @@ table, th, td {
 						<th colspan="2">Action</th>
 					</tr>
 					<c:forEach var="tempCart" items="${listItemCart}">
-						<tr>
-							<td>${tempCart.sanPham.anhSP}</td>
+						<tr class="image">
+							<td><img src="${tempCart.sanPham.anhSP}"/></td>
 							<td>${tempCart.sanPham.tenSP}</td>
 							<td>${tempCart.sanPham.kichCo}</td>
 							<td>${tempCart.sanPham.giaBan}</td>
@@ -47,9 +74,14 @@ table, th, td {
 							<c:url var="deleteLink" value="/khachHang/deleteItemCart">
 								<c:param name="maSP" value="${tempCart.sanPham.maSP}"></c:param>
 							</c:url>
+							<c:url var="updateLink" value="/sanPham/showFormForUpdateCart">
+								<c:param name="maSP" value="${tempCart.sanPham.maSP}"></c:param>
+							</c:url>
 
 							<td>
 								<div align="center">
+								<a href="${updateLink}">Update</a>&emsp;
+								
 									<a href="${deleteLink}"
 										onclick="if(!(confirm('Are you sure to delete this san pham?'))) return false">Delete</a>&emsp;
 								</div>
@@ -58,9 +90,12 @@ table, th, td {
 
 					</c:forEach>
 				</table>
+							<div id="content" align="center" style="margin: 5px 5px 5px 5px">
+				
 				<input type="button" value="THANH TOÁN"
 					onclick="window.location.href='showFormForPay'; return false;"
 					class="add-button">
+					</div>
 			</div>
 		</div>
 	</div>

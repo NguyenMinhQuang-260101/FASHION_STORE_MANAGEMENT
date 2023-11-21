@@ -5,15 +5,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Save khách hàng</title>
-</head>
+<title>Save sản phẩm</title>
 <style type="text/css">
 body {
 	background: #e35869;
 }
 
 .form-them {
-	float: left;
+float: left;
 	background-color: white;
 	width: 750px;
 	margin-left: 500px;
@@ -32,7 +31,7 @@ label {
 }
 
 input {
-	width: 300px;
+	width: 100%;
 }
 
 .save {
@@ -55,37 +54,45 @@ table, tbody, tr {
 	padding: 20px;
 }
 </style>
+</head>
+
 <body>
 	<div>
 		<%@include file="main-menu.jsp"%>
 	</div>
+
 	<div id="container" class="form-them">
-		<h2>Thêm khách hàng</h2>
-		<form:form action="saveKhachHang" modelAttribute="khachHang"
+		<h3>Update Giỏ Hàng Sản Phẩm</h3>
+		<!-- ***** CHƯA THÊM modelAttribute *****-->
+		<form:form action="updateSanPhamToCart" modelAttribute="cart"
 			method="POST">
-			<form:hidden path="maKH" />
+			<form:hidden path="sanPham.maSP" />
 			<table>
 				<tbody>
-
 					<tr>
-						<td><label>Họ tên khách hàng:</label></td>
-						<td><form:input path="hoTenKH" pattern="/^[a-zA-Z!@#\$%\^\&*\)\(+=._-]{2,}$/"
-								title="Chỉ nhập chữ"></form:input></td>
+						<td><label>Tên sản phẩm:</label></td>
+						<td><form:input path="sanPham.tenSP"></form:input></td>
+					</tr>
+					<tr>
+						<td><label>Kích cỡ</label></td>
+						<td><form:input path="sanPham.kichCo"></form:input></td>
+					</tr>
+					<tr>
+						<td><label>Ảnh sản phẩm</label></td>
+						<td><form:input path="sanPham.anhSP"></form:input></td>
+					</tr>
+					<tr>
+						<td><label>Số lượng mua:</label></td>
+						<td><form:input path="soLuongMua"></form:input></td>
 					</tr>
 
 					<tr>
-						<td><form:input path="sdtKH" pattern="[0-9]{10}"
-								title="Số điện thoại 10 số"></form:input></td>
-					</tr>
-
-					<tr>
-						<td><label>Địa chỉ:</label></td>
-						<td><form:input path="diaChiKH" pattern="/^[a-zA-Z!@#\$%\^\&*\)\(+=._-]{2,}$/"></form:input></td>
+						<td><form:hidden path="tongGiaSP" /></td>
 					</tr>
 
 					<tr>
 						<td><label></label></td>
-						<td><input type="submit" value="Save" class="save" /></td>
+						<td><input type="submit" value="Cập nhật" class="save" /></td>
 					</tr>
 				</tbody>
 			</table>

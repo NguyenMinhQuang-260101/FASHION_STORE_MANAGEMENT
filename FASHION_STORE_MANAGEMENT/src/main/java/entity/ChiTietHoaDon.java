@@ -21,11 +21,11 @@ public class ChiTietHoaDon {
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "hoadon_id", nullable = false)
-	private HoaDon hoaDon;
+	private HoaDon hoadon_id;
 
 	@ManyToOne
 	@JoinColumn(name = "sanpham_id", nullable = false)
-	private SanPham sanPham;
+	private SanPham sanpham_id;
 
 	@Column(name = "soLuong")
 	private int soLuong;
@@ -35,11 +35,11 @@ public class ChiTietHoaDon {
 	}
 
 	public HoaDon getHoaDon() {
-		return hoaDon;
+		return hoadon_id;
 	}
 
 	public SanPham getSanPham() {
-		return sanPham;
+		return sanpham_id;
 	}
 
 	public int getSoLuong() {
@@ -51,11 +51,11 @@ public class ChiTietHoaDon {
 	}
 
 	public void setHoaDon(HoaDon hoaDon) {
-		this.hoaDon = hoaDon;
+		this.hoadon_id = hoaDon;
 	}
 
 	public void setSanPham(SanPham sanPham) {
-		this.sanPham = sanPham;
+		this.sanpham_id = sanPham;
 	}
 
 	public void setSoLuong(int soLuong) {
@@ -65,8 +65,8 @@ public class ChiTietHoaDon {
 	public ChiTietHoaDon(int id, HoaDon hoaDon, SanPham sanPham, int soLuong) {
 		super();
 		this.id = id;
-		this.hoaDon = hoaDon;
-		this.sanPham = sanPham;
+		this.hoadon_id = hoaDon;
+		this.sanpham_id = sanPham;
 		this.soLuong = soLuong;
 	}
 
@@ -77,9 +77,13 @@ public class ChiTietHoaDon {
 
 	public ChiTietHoaDon(HoaDon hoaDon, SanPham sanPham, int soLuong) {
 		super();
-		this.hoaDon = hoaDon;
-		this.sanPham = sanPham;
+		this.hoadon_id = hoaDon;
+		this.sanpham_id = sanPham;
 		this.soLuong = soLuong;
+	}
+
+	public ChiTietHoaDon() {
+		super();
 	}
 
 }

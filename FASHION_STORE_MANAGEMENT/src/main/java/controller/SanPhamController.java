@@ -34,7 +34,7 @@ public class SanPhamController {
 	public String showFormForUpdate(@RequestParam("maSP") int maSP, Model theModel) {
 		SanPham sanPham = sanPhamService.getSanPham(maSP);
 		theModel.addAttribute("sanPham", sanPham);
-		return "sanPham-form";
+		return "sanPham-form2";
 	}
 
 	@GetMapping("/showFormForAdd")
@@ -51,6 +51,20 @@ public class SanPhamController {
 		Cart cart = new Cart(sanPham, 0, 0);
 		theModel.addAttribute("cart", cart);
 		return "info-sanpham";
+	}
+	@GetMapping("/showFormForUpdateCart")
+	public String showFormForUpdateCart(@RequestParam("maSP") int maSP, Model theModel) {
+		SanPham sanPham = sanPhamService.getSanPham(maSP);
+		List<Cart> listItemCartUpdate = SanPhamController.listCarts;
+		Cart cartTamp = new Cart();
+		for (Cart cart : listItemCartUpdate) {
+			if (cart.getSanPham().getMaSP() == maSP) {
+				cartTamp = new Cart(sanPham, cart.getSoLuongMua(), 0);
+			}
+		}
+
+		theModel.addAttribute("cart", cartTamp);
+		return "info-cart";
 	}
 
 //	Add to Cart
@@ -72,5 +86,23 @@ public class SanPhamController {
 		theModel.addAttribute("sanPhams", sanPhams);
 		return "list-sanPham";
 	}
+	
+	@PostMapping("/updateSanPham")
+	public String updateSanPham(@ModelAttribute("sanPham") SanPham sanPham) {
+		sanPhamService.updateSanPham(sanPham);
+		return "redirect:/sanPham/list";
+	}
+	
+	@PostMapping("/updateSanPhamToCart")
+	public String updateSanPhamToCart(@ModelAttribute("cart") Cart cart) {
+		List<Cart> listItemCartUpdate = SanPhamController.listCarts;
+		for (Cart cartTamp : listItemCartUpdate) {
+			if (cartTamp.getSanPham().getMaSP()==cart.getSanPham().getMaSP()) {
+				cartTamp.setSoLuongMua(cart.getSoLuongMua());
+			}
+		}
+		return "redirect:/khachHang/cart";
+	}
+	
 
 }

@@ -8,11 +8,11 @@
 <title>Save khách hàng</title>
 </head>
 <style type="text/css">
-body {
-	background: #e35869;
+	body {
+  background: #e35869;
+	
 }
-
-.form-them {
+.form-them{
 	float: left;
 	background-color: white;
 	width: 750px;
@@ -22,47 +22,42 @@ body {
 	height: 350px;
 	padding: 30px;
 }
-
-label {
+label{
 	font-size: 20px;
 }
-
-.form-them h2 {
+.form-them h2{
 	text-align: center;
 }
-
-input {
+input{
 	width: 300px;
 }
-
-.save {
+.save{
 	width: 80px;
 	height: 100%;
-	background-color: #e35869;
-	text-align: center;
+	background-color:  #e35869;
+	text-align: center; 
 	border-radius: 20px;
 	margin-top: 20px;
 	font-size: 15px;
 	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin-left: 280px;
-	color: white;
+  	justify-content: center;
+ 	 align-items: center; 	 
+  	margin-left: 280px;
+  	color: white;
 }
-
-table, tbody, tr {
+table,tbody,tr{
 	margin-top: 20px;
 	padding: 20px;
 }
+
 </style>
 <body>
 	<div>
-		<%@include file="main-menu.jsp"%>
-	</div>
+<%@include file="main-menu.jsp" %>
+</div>
 	<div id="container" class="form-them">
-		<h2>Thêm khách hàng</h2>
-		<form:form action="saveKhachHang" modelAttribute="khachHang"
-			method="POST">
+		<h2>Update khách hàng</h2>
+		<form:form action="updateKhachHang" modelAttribute="khachHang" method="POST">
 			<form:hidden path="maKH" />
 			<table>
 				<tbody>
